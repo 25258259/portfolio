@@ -13,7 +13,7 @@ const Settings = ({ toRestart }) => {
 		<aside className='settings'>
 			<h2>Settings</h2>
 			<form>
-				<label htmlFor='amountOfRadars'>Amount of radars: </label>
+				{/* <label htmlFor='amountOfRadars'>Amount of radars: </label>
 				<input
 					id='amountOfRadars'
 					type='text'
@@ -40,7 +40,7 @@ const Settings = ({ toRestart }) => {
 					}
 					value={amountOfTreasures}
 				/>
-				<br />
+				<br /> */}
 				<div className='buttons'>
 					<button
 						className='submit-btn'
