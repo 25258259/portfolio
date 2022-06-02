@@ -1,0 +1,215 @@
+:root {
+	--clr-main-black: #202020;
+	--clr-main-white: #fefefe;
+
+	--clr-main-red: #eb3417;
+	--clr-main-light-gray: #505050;
+	--clr-main-yellow: #666;
+	--clr-main-dark-blue: #006778;
+	/*213352*/
+	--clr-main-lightblue: #00a5b8;
+	--clr-main-lastblue: #0093ab;
+	--transition: all 0.3s linear;
+	--spacing: 0.1rem;
+	--radius: 0.25rem;
+	--light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	--dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	--max-width: 1170px;
+	--fixed-width: 620px;
+}
+
+* {
+	font-family: Menlo, Monaco, Consolas, 'Droid Sans Mono', monospace;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--clr-main-white);
+}
+
+.close-modal {
+	position: relative;
+	top: 0%;
+	left: calc(100% - 40px);
+	color: var(--clr-main-red);
+	background-color: var(--clr-main-white);
+	border: none;
+	font-size: 30px;
+	min-height: 50px;
+	transition: 90ms linear;
+}
+
+.close-modal:hover {
+	transform: scale(1.2);
+}
+
+dialog {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: var(--clr-main-black);
+	padding: 20px;
+	border-radius: 30px;
+	border: none;
+	background-color: var(--clr-main-white);
+	width: 30vw;
+	height: 20vh;
+	backdrop-filter: rgb(0, 0, 0, 0.9);
+	scroll-behavior: none;
+	overflow: hidden;
+}
+
+dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-text {
+	position: relative;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.5rem;
+	justify-content: center;
+	justify-self: center;
+	height: 10vh;
+}
+
+.navbar h1 {
+	color: var(--clr-main-black);
+	font-size: 2.5rem;
+	text-indent: 1rem;
+}
+
+.navbar {
+	padding: 0.5rem;
+	width: 100vw;
+	height: 3rem;
+	/* box-shadow: 0 15px 30px rgba(82, 82, 82, 1);
+	background-color: var(--clr-main-yellow); */
+	background-color: var(--clr-main-white);
+	/* background-image: linear-gradient(
+		rgba(100, 100, 100, 1),
+		rgba(100, 100, 100, 0)
+	); */
+}
+
+.board {
+	background-color: transparent;
+	gap: 5px;
+	width: calc(30 * 40px);
+	height: 90vh;
+	margin: 20px auto;
+	display: grid;
+	grid-template-columns: repeat(30, 35px);
+	grid-template-rows: repeat(20, 1fr);
+	padding: 5px;
+}
+
+.game-object {
+	border-radius: 5px;
+	font-size: 2rem;
+	height: 35px;
+	border: none;
+	color: var(--clr-main-dark-blue);
+	background-color: var(--clr-main-lightblue);
+	transition: all 100ms linear;
+}
+
+.game-object:hover {
+	background-color: #ffd124;
+}
+.game-object:hover::after {
+	background-color: black;
+	position: relative;
+	z-index: 2;
+	width: 400px;
+	height: 400px;
+}
+
+.settings {
+	padding: 20px;
+	min-width: 400px;
+	background-color: var(--clr-main-white);
+	color: var(--clr-main-black);
+	height: 90vh;
+	margin: 20px 0px;
+	border-radius: 30px 0px 0px 30px;
+	border-top: solid 2px var(--clr-main-black);
+	border-bottom: solid 2px var(--clr-main-black);
+	border-left: solid 2px var(--clr-main-black);
+	font-weight: 550;
+	line-height: 3rem;
+	font-size: 1.2rem;
+}
+
+main {
+	display: flex;
+	flex-direction: row;
+	column-gap: 50px;
+	justify-content: flex-end;
+	align-content: center;
+}
+
+.input {
+	color: var(--clr-main-black);
+	width: 30px;
+	padding: 2px;
+	text-align: center;
+	border-radius: 20%;
+	box-shadow: none;
+	border: solid 1px var(--clr-main-black);
+	background-color: #fff;
+	font-size: 1.1rem;
+}
+
+form {
+	display: block;
+	margin-left: 5px;
+}
+
+.submit-btn {
+	color: var(--clr-main-white);
+	background-color: var(--clr-main-lightblue);
+	font-size: 2rem;
+	padding: 0.4rem 0.8rem;
+	font-weight: bold;
+	border-radius: 2.5rem;
+	border: none;
+	transition: all 200ms linear;
+}
+
+.submit-btn:hover {
+	font-size: 2.2rem;
+	color: var(--clr-main-lightblue);
+	background-color: var(--clr-main-white);
+	border: solid 2px var(--clr-main-lightblue);
+}
+
+.reset-btn {
+	color: var(--clr-main-black);
+	background-color: var(--clr-main-white);
+	font-size: 2rem;
+	padding: 0.4rem 0.8rem;
+	font-weight: bold;
+	border-radius: 2.5rem;
+	border: solid 2px var(--clr-main-black);
+	transition: all 200ms linear;
+	float: right;
+}
+
+.reset-btn:hover {
+	color: var(--clr-main-white);
+	background-color: var(--clr-main-black);
+}
+.buttons {
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-evenly;
+	min-height: calc(20px + 2.4rem);
+}
+
+form button:hover {
+	transform: scale(1.1);
+}
